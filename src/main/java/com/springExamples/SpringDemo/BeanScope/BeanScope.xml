@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+  
+  <!--  bean with singleton scope -->
+  <bean class = "com.springExamples.SpringDemo.BeanScope.College" id = "college1" scope = "singleton">
+  	<constructor-arg name = "name" value = "Sanjeevan Engineering And Technology institute Panhala"/>
+  	<constructor-arg name = "address" value = "panhala"/>
+  </bean>
+  
+  <!-- bean with prototye scope -->
+  <bean class = "com.springExamples.SpringDemo.BeanScope.Department" id = "dept1" scope="prototype">
+  	<property name = "name" value = "Mechanical Engineering" />
+  	<property name = "college" value = "SETI Panhala"/>
+  </bean>
+  
+</beans>

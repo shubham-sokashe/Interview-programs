@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+   <context:annotation-config />
+    
+
+	<bean class = "com.springExamples.SpringDemo.autowiringAnnotation.Company" id = "cmp1">
+		<property name = "companyName" value = "xyz.pvt.ltd"/>
+		<property name = "companyId" value ="xyzp11"/>
+	</bean>
+	
+	<bean class = "com.springExamples.SpringDemo.autowiringAnnotation.Employee"	id = "emp1">
+	<property name = "empName" value = "shubham"/>
+	<property name = "empId" value = "emp101"/>
+	</bean>
+	
+	<bean class = "com.springExamples.SpringDemo.autowiringAnnotation.WorkStation" id = "wkbean1">
+		<constructor-arg name = "workstationNo" value ="pc100"/>
+		<constructor-arg name = "workstationPassword" value = "111"/>
+		
+	</bean>
+
+    
+</beans>

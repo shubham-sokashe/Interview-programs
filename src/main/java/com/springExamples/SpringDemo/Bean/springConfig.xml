@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- creating Student Class Bean -->
+	<bean id = "student1" class = "com.springExamples.SpringDemo.Bean.Student">
+		<property name = "studentId" value = "stu101" />
+		<property name = "studentName" value = "Shubham Sokashe"/>
+		<property name = "studentAddress" ref = "address1"/>
+		<property name="subjects">
+			<map>
+				<entry key = "Maths" value = "50"/>
+				<entry key ="English" value = "40"></entry>
+				<entry key = "Chemistry" value = "60"/>
+				<entry key ="physics" value = "50"/>
+				
+			</map>
+		</property>
+		
+	</bean>
+	
+	<!-- creating bean of address -->
+	<bean id = "address1" class = "com.springExamples.SpringDemo.Bean.Address">
+		<property name = "country" value = "India"/>
+		<property name = "city" value = "Pune"/>
+		<property name = "pinCode" value = "411046"/>
+	</bean>
+	
+	<!--  creating bean of Employee -->
+	<bean id = "emp1" class = "com.springExamples.SpringDemo.Bean.Employee">
+		<property name = "employeeName" value = "Aniket"/>
+		<property name = "employeeId" value = "emp101"/>
+		<property name = "employeeDepartment" value = "Analysis"/>
+		<property name="employeeAddresses">
+			<set>
+				<ref bean = "address1"/>
+				<ref bean = "address2"/>
+			</set>
+		</property>
+		<property name="employeeAssets">
+			<list>
+				<value>Laptop</value>
+				<value>Desktop</value>
+				<value>Laptop</value>
+				<null/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id = "address2" class = "com.springExamples.SpringDemo.Bean.Address">
+		<property name = "country" value = "USA"/>
+		<property name = "city" value = "NewYork"/>
+		<property name = "pinCode" value = "00111"/>
+	</bean>
+	
+
+</beans>

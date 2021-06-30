@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--  bean of Subject -->
+	<bean id = "subject1" class = "com.springExamples.SpringDemo.constructorInjection.Subject">
+		<constructor-arg name="subjectId" value = "sub101" type = "String"/>
+		<constructor-arg name = "subjectName" value = "Mathematics" type = "String"/>
+	</bean>
+	
+	<bean id = "subject2" class = "com.springExamples.SpringDemo.constructorInjection.Subject">
+		<constructor-arg  value = "sub102"/>
+		<constructor-arg value = "Physics"/>
+	</bean>
+	
+	<bean id = "subject3" class = "com.springExamples.SpringDemo.constructorInjection.Subject" >
+		<constructor-arg  value = "Chemistry" index = "1"/>
+		<constructor-arg value = "sub103" index = "0"/>
+	</bean>
+
+<!-- bean of course -->
+
+	<bean id = "course1" class = "com.springExamples.SpringDemo.constructorInjection.Course" >
+		<constructor-arg name = "courseId" value = "cou101" type = "String" />
+		<constructor-arg name = "courseName" value = "Mechanical Engineering" type = "String"/>
+		<constructor-arg name = "courseDepartment" value = "Mechanical department" type = "String"/>
+		<constructor-arg name = "coruseSubject" >
+			<list>
+				 <ref bean = "subject1"/>
+				 <ref bean = "subject2"/>
+				 <ref bean = "subject3"/>
+			</list>
+		</constructor-arg>
+	
+	</bean>
+
+
+</beans>

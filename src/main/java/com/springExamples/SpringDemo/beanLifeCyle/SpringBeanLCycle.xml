@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- more bean definitions for services go here -->
+    <context:annotation-config />
+
+	<bean class = "com.springExamples.SpringDemo.beanLifeCyle.PensileBean" id = "pensile1" init-method = "init" destroy-method = "destory">
+		<constructor-arg name = "brand" value = "camel"/>
+		<constructor-arg name = "type" value = "Automatic lead" />
+		<constructor-arg name = "color" value = "Black"/>
+	</bean>
+
+	<bean class = "com.springExamples.SpringDemo.beanLifeCyle.PenBean" id = "pen1">
+	<property name="brand" value = "Renolds0"/>
+	<property name = "color" value = "blue"/>
+	<property name = "type" value = "ballPen"/>
+	
+	</bean>
+	
+	<bean class = "com.springExamples.SpringDemo.beanLifeCyle.MarkerBean" id = "marker1">
+		<property name = "brand" value = "fiberCastle"/>
+		<property name="color" value = "orange"/>
+	</bean>
+
+</beans>

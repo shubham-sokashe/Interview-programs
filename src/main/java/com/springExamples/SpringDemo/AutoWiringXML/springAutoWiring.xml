@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- College bean autowired using bytype -->
+<bean class = "com.springExamples.SpringDemo.AutoWiringXML.College" id = "college1" autowire = "byType" >
+	<property name = "name" value = "SETI Panhala"/>
+	<property name = "collegeId" value = "clg101"/>
+</bean>
+
+<!--  Department bean autowired using byName -->
+<bean class = "com.springExamples.SpringDemo.AutoWiringXML.Department" name = "department1" autowire = "byName">
+	<property name = "name" value = "Mechanical Engineering"/>
+</bean>
+
+
+    
+    <!-- TeacherBean  -->
+    <bean class = "com.springExamples.SpringDemo.AutoWiringXML.Teacher" id = "teacher1">
+    <property name = "name" value = "XYZ sir"/>
+    <property name = "subject" value = "SOM"/>
+    <property name = "TeacherId" value = "T101"/>
+    </bean>
+    
+    <!-- bean of subject -->
+    <bean class = "com.springExamples.SpringDemo.AutoWiringXML.Subject" id = "sub1">
+    <property name = "name" value = "Strength of Mechanics"/>
+    <property name = "id" value = "sub101"/>
+    </bean>
+    
+    <bean class = "com.springExamples.SpringDemo.AutoWiringXML.Student" id = "stu1" autowire = "constructor">
+    	<constructor-arg name = "name" value = "shubham sokashe"/>
+    	<constructor-arg name = "id" value = "stu101"/>
+    </bean>
+    
+</beans>
